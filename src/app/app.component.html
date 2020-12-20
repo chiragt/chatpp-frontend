@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark" style="background-color: cadetblue !important;" *ngIf="user">
+  <div class="navbar-nav">
+      <!--<a class="nav-item nav-link"  routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>-->
+      <a class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" style="font-weight: 600;" routerLink="/users" routerLinkActive="active">Users</a>
+      <a class="nav-item nav-link" style="font-weight: 600;cursor: pointer;" (click)="logout()">Logout</a>
+      
+  </div>
+</nav>
+
+<!-- main app container -->
+<div class="app-container" [ngClass]="{ 'bg-light': user }">
+  <alert></alert>
+  <router-outlet></router-outlet>
+</div>
